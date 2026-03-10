@@ -1,0 +1,98 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>APEX FITNESS — Website Analysis Engine</title>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Mono:wght@400;700&family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <div class="logo">
+        APEX<br>
+        <span>WEBSITE ANALYSIS ENGINE</span>
+    </div>
+    <div class="status-pill">
+        <div class="dot"></div>
+        SYSTEM ONLINE
+    </div>
+</header>
+
+<section class="hero">
+    <h1>ANALYZE YOUR<br><em>GYM WEBSITE</em></h1>
+    <p>Enter your fitness website URL to get a comprehensive analysis covering performance, conversion rate, SEO, UX/mobile experience, tech stack, and membership funnel optimization.</p>
+</section>
+
+<div class="input-section">
+    <div class="input-wrapper">
+        <input type="text" id="urlInput" placeholder="https://yourgym.com" />
+        <button class="analyze-btn" id="analyzeBtn" onclick="runAnalysis()">▶ ANALYZE</button>
+    </div>
+</div>
+
+<div class="loader" id="loader">
+    <div class="loader-ring"></div>
+    <p id="loaderText">INITIALIZING ANALYSIS ENGINE...</p>
+</div>
+
+<div id="results">
+
+    <!-- OVERALL SCORE -->
+    <div class="score-banner">
+        <div class="score-left">
+            <div class="score-label">OVERALL SCORE</div>
+            <div class="score-number" id="overallScore">—</div>
+            <div class="score-grade" id="scoreGrade">—</div>
+        </div>
+        <div class="score-right">
+            <div class="score-title" id="siteTitle">SITE ANALYSIS COMPLETE</div>
+            <div class="score-url" id="siteUrl"></div>
+            <div class="score-bars" id="scoreBars"></div>
+        </div>
+    </div>
+
+    <!-- SECTION ANALYSIS CARDS -->
+    <div class="divider-label">
+        <h2>SECTION ANALYSIS</h2>
+        <div class="divider-line"></div>
+    </div>
+    <div class="sections-grid" id="sectionCards"></div>
+
+    <!-- TECH STACK -->
+    <div class="divider-label">
+        <h2>RECOMMENDED TECH STACK</h2>
+        <div class="divider-line"></div>
+    </div>
+    <div class="tech-row" id="techCards"></div>
+
+    <!-- CONVERSION FUNNEL -->
+    <div class="funnel-section">
+        <div class="funnel-title">MEMBERSHIP CONVERSION FUNNEL</div>
+        <div class="funnel-steps" id="funnelSteps"></div>
+    </div>
+
+    <!-- SEO CHECKLIST -->
+    <div class="analysis-card" style="margin-bottom:32px">
+        <div class="card-header">
+            <div class="card-title"><div class="card-icon">🔍</div> SEO OPTIMIZATION CHECKLIST</div>
+        </div>
+        <div class="card-body">
+            <div class="checklist" id="seoChecklist"></div>
+        </div>
+    </div>
+
+    <!-- RECOMMENDATIONS -->
+    <div class="reco-section">
+        <div class="reco-header">
+            <h2>PRIORITY RECOMMENDATIONS</h2>
+        </div>
+        <div class="reco-list" id="recoList"></div>
+    </div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
